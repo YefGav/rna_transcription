@@ -67,4 +67,14 @@ public class RnaTranscriptionTest {
         // Then
         assertThat(transcription.getRna(), equalTo("A"));
     }
+
+    @Test
+    public void testTranscriptionForA() {
+        // Given
+        String dna = "A";
+        RnaTranscription transcription = new RnaTranscription(dna);
+        transcription.transcribe();
+        // Then
+        assertThat(transcription.getRna(), equalTo("U"));
+    }
 }
