@@ -32,10 +32,15 @@ public class RnaTranscription {
         StringBuilder rnaBuilder = new StringBuilder();
         for (int i = 0; i < dna.length(); i++) {
             char nucleotide = dna.charAt(i);
-            if (nucleotide == 'G') {
-                rnaBuilder.append('C');
-            } else {
-                throw new IllegalArgumentException("Unsupported nucleotide: " + nucleotide);
+            switch (nucleotide) {
+                case 'G':
+                    rnaBuilder.append('C');
+                    break;
+                case 'C':
+                    rnaBuilder.append('G');
+                    break;
+                default:
+                    throw new IllegalArgumentException("Unsupported nucleotide: " + nucleotide);
             }
         }
         rna = rnaBuilder.toString();
