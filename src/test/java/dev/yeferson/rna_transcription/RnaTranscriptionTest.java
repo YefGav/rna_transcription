@@ -14,4 +14,14 @@ public class RnaTranscriptionTest {
         assertNotNull(transcription);
         
     }
+
+    @Test
+
+    public void testConstructorAndGetterForDna () {
+
+        String dna = "GCTA";
+        RnaTranscription transcription = new RnaTranscription(dna);
+        assertThat(transcription.getDna()).isEqualTo(dna);
+        
+    }
 }
