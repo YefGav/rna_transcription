@@ -35,4 +35,15 @@ public class RnaTranscriptionTest {
         transcription.setDna("GCTA");
         assertThat(transcription.getDna(), equalTo("GCTA"));
     }
+
+    @Test
+    public void testTranscriptionForG() {
+        // Given
+        String dna = "G";
+        RnaTranscription transcription = new RnaTranscription(dna);
+        // When
+        transcription.transcribe();
+        // Then
+        assertThat(transcription.getRna(), equalTo("C"));
+    }
 }

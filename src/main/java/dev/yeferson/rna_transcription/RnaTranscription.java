@@ -15,5 +15,10 @@ public class RnaTranscription {
         return dna;
     }
 
+    public void setDna(String dna) {
+        this.dna = dna;
+    }
+
+    
     
 }
