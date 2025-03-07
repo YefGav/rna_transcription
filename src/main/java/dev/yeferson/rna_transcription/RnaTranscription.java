@@ -42,6 +42,9 @@ public class RnaTranscription {
                 case 'T':
                     rnaBuilder.append('A');
                     break;
+                case 'A':
+                    rnaBuilder.append('U');
+                    break;
                 default:
                     throw new IllegalArgumentException("Unsupported nucleotide: " + nucleotide);
             }
