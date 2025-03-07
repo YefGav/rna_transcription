@@ -3,6 +3,7 @@ package dev.yeferson.rna_transcription;
 public class RnaTranscription {
 
     private String dna;
+    private String rna;
 
     public RnaTranscription() {
     }
@@ -19,6 +20,25 @@ public class RnaTranscription {
         this.dna = dna;
     }
 
-    
+    public String getRna() {
+        return rna;
+    }
+
+    public void transcribe() {
+        if (dna == null) {
+            throw new IllegalArgumentException("DNA sequence cannot be null");
+        }
+        
+        StringBuilder rnaBuilder = new StringBuilder();
+        for (int i = 0; i < dna.length(); i++) {
+            char nucleotide = dna.charAt(i);
+            if (nucleotide == 'G') {
+                rnaBuilder.append('C');
+            } else {
+                throw new IllegalArgumentException("Unsupported nucleotide: " + nucleotide);
+            }
+        }
+        rna = rnaBuilder.toString();
+    }
     
 }
